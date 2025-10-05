@@ -10,7 +10,6 @@ const Hero = () => {
 
       {/* Contenido */}
       <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center justify-center gap-8 py-20">
-
         {/* Título principal con animación */}
         <motion.h1
           className="font-bold text-5xl md:text-7xl lg:text-8xl tracking-tight text-white leading-tight max-w-4xl"
@@ -18,8 +17,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          Explora el universo con un{" "}
-          <span className="text-white">Recorrido Virtual</span>
+          Explora el universo con <span className="text-white">Sputni</span>
         </motion.h1>
 
         {/* Subtítulo con animación */}
@@ -29,7 +27,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         >
-          Descubre planetas, estrellas y galaxias. Sin necesidad de telescopio.
+          Platica con Sputni y descubre el universo a través de conversaciones.
         </motion.p>
 
         {/* Botones con animación */}
@@ -42,16 +40,10 @@ const Hero = () => {
           {/* Botón principal con transición */}
           <PageTransition href="/tour">
             <button className="px-8 py-4 bg-white text-black font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200 text-base cursor-pointer">
-              Iniciar recorrido virtual
+              Hablar con Sputni
             </button>
           </PageTransition>
-
-          {/* Botón secundario */}
-          <button className="px-8 py-4 bg-transparent text-white font-semibold rounded-lg border-2 border-white/20 hover:border-white/40 transition-colors duration-200 text-base">
-            Ver video
-          </button>
         </motion.div>
-
       </div>
     </section>
   );

@@ -32,7 +32,7 @@ export default function TourPage() {
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black flex flex-col items-center justify-center gap-8 px-8">
       {/* Título */}
       <h1 className="text-5xl md:text-6xl text-white font-bold text-center">
-        Tour Virtual del Universo 🚀
+        Habla con Sputni 🚀
       </h1>
 
       {/* Botones de control */}
