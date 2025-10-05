@@ -1,13 +1,13 @@
 "use client";
-import { useConversation } from '@elevenlabs/react';
-import { useCallback } from 'react';
+import { useConversation } from "@elevenlabs/react";
+import { useCallback } from "react";
 
 export default function TourPage() {
   const conversation = useConversation({
-    onConnect: () => console.log('Conectado'),
-    onDisconnect: () => console.log('Desconectado'),
-    onMessage: (message) => console.log('Mensaje:', message),
-    onError: (error) => console.error('Error:', error),
+    onConnect: () => console.log("Conectado"),
+    onDisconnect: () => console.log("Desconectado"),
+    onMessage: (message) => console.log("Mensaje:", message),
+    onError: (error) => console.error("Error:", error),
   });
 
   const startConversation = useCallback(async () => {
@@ -20,7 +20,7 @@ export default function TourPage() {
         agentId: process.env.NEXT_PUBLIC_AGENT_ID,
       });
     } catch (error) {
-      console.error('Error al iniciar conversación:', error);
+      console.error("Error al iniciar conversación:", error);
     }
   }, [conversation]);
 
@@ -39,14 +39,14 @@ export default function TourPage() {
       <div className="flex gap-4">
         <button
           onClick={startConversation}
-          disabled={conversation.status === 'connected'}
+          disabled={conversation.status === "connected"}
           className="px-8 py-4 bg-white text-black font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200 disabled:bg-gray-500 disabled:cursor-not-allowed"
         >
           Iniciar Conversación
         </button>
         <button
           onClick={stopConversation}
-          disabled={conversation.status !== 'connected'}
+          disabled={conversation.status !== "connected"}
           className="px-8 py-4 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-colors duration-200 disabled:bg-gray-500 disabled:cursor-not-allowed"
         >
           Terminar Conversación
@@ -56,7 +56,12 @@ export default function TourPage() {
       {/* Estado */}
       <div className="text-center">
         <p className="text-xl text-white">
-          Estado: <span className="font-bold">{conversation.status === 'connected' ? 'Conectado ✅' : 'Desconectado ❌'}</span>
+          Estado:{" "}
+          <span className="font-bold">
+            {conversation.status === "connected"
+              ? "Conectado ✅"
+              : "Desconectado ❌"}
+          </span>
         </p>
         {conversation.isSpeaking && (
           <p className="text-lg text-blue-400 mt-2 animate-pulse">
