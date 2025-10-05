@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import PageTransition from "./PageTransition";
 
 const Hero = () => {
   return (
@@ -38,10 +39,12 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
         >
-          {/* Botón principal */}
-          <button className="px-8 py-4 bg-white text-black font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200 text-base">
-            Iniciar recorrido virtual
-          </button>
+          {/* Botón principal con transición */}
+          <PageTransition href="/tour">
+            <button className="px-8 py-4 bg-white text-black font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200 text-base cursor-pointer">
+              Iniciar recorrido virtual
+            </button>
+          </PageTransition>
 
           {/* Botón secundario */}
           <button className="px-8 py-4 bg-transparent text-white font-semibold rounded-lg border-2 border-white/20 hover:border-white/40 transition-colors duration-200 text-base">
